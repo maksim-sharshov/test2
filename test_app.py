@@ -10,7 +10,7 @@ def test_root():
     response = client.get("/")
 
     assert response.status_code == 200
-    assert response.json()["message"] == "Task API is running"
+    assert response.json()["message"] == "New version"
 
 
 def test_health():
