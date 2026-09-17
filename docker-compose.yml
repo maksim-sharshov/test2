@@ -4,4 +4,4 @@ services:
     container_name: task-api
     restart: unless-stopped
     ports:
-      - "6000:8000"
+      - "8000:8000"
