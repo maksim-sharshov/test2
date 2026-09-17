@@ -1,6 +1,6 @@
 services:
   api:
-    image: ghcr.io/maksim-sharshov/test2:latest
+    build: .
     container_name: task-api
     restart: unless-stopped
     ports:
