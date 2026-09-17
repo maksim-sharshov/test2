@@ -1,6 +1,13 @@
-def add(a, b):
-    return a + b
+from fastapi import FastAPI
+
+app = FastAPI()
 
 
-def multiply(a, b):
-    return a * b
+@app.get("/")
+def root():
+    return {"message": "Task API is running"}
+
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}

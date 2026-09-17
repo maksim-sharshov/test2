@@ -1,9 +1,20 @@
-from app import add, multiply
+from fastapi.testclient import TestClient
+
+from app import app
 
 
-def test_add():
-    assert add(2, 3) == 5
+client = TestClient(app)
 
 
-def test_multiply():
-    assert multiply(2, 3) == 6
+def test_root():
+    response = client.get("/")
+
+    assert response.status_code == 200
+    assert response.json()["message"] == "Task API is running"
+
+
+def test_health():
+    response = client.get("/health")
+
+    assert response.status_code == 200
+    assert response.json()["status"] == "ok"
