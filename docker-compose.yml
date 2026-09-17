@@ -1,0 +1,7 @@
+services:
+  api:
+    image: ghcr.io/maksim-sharshov/test2:latest
+    container_name: task-api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
