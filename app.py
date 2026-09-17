@@ -5,7 +5,7 @@ app = FastAPI()
 
 @app.get("/")
 def root():
-    return {"message": "Task API is running"}
+    return {"message": "New version"}
 
 
 @app.get("/health")
